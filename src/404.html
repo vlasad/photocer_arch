@@ -1,0 +1,32 @@
+---
+permalink: 404.html
+layout: default
+title: Page Not Found
+eleventyExcludeFromCollections: true
+---
+<div class="my-4">
+  <div class="grid grid-cols-6 divide-x divide-gray-300 mb-4">
+    <div class="col-span-2 pr-4 text-6xl text-yellow-500 font-semibold text-right">404</div>
+    <div class="col-span-4 pl-4">
+      <span class="text-4xl font-bold block mb-2">Page Not Found</span>
+      <span class="text-xl text-gray-500">Looks like you've followed a broken link or entered a URL that doesn't exist on our site.</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-6">
+    <div class="col-span-2 pr-4"></div>
+    <div class="col-span-4 pl-4 flex">
+      <a id="back-link" class="px-10 py-3 font-medium text-white hover:text-white transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600">
+        Go Back
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    let url = "/";
+    if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {
+      url = document.referrer;
+    }
+    document.getElementById("back-link").setAttribute("href", url);
+  })();
+</script>

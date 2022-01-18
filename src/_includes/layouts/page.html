@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "layouts/shared/head.html" %}
+  </head>
+  <body>
+    <div class="">
+      {% include "layouts/shared/header.html" %}
+    </div>
+    <div class="">
+      {{ content | safe }}
+    </div>
+    {% include "layouts/shared/footer.html" %}
+  </body>
+</html>
